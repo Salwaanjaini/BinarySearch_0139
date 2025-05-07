@@ -31,22 +31,25 @@ void input()
     }
 
 }
-
-void display()
+void bubbleSortArray()
 {
-    cout << "\n=======================================\n";
-    cout << "  Elemen Array Setelah Diurutkan (Asc) \n";
-    cout << "=======================================\n";
-    for (int j = 0; j < nPanjang; j++)
+    int pass = 1;
+    do
     {
-        cout << element[j];
-        if (j < nPanjang - 1)
+        for (int j = 0; j <= nPanjang - 1 - pass; j++)
         {
-            cout << " --> ";
+            if (element[j] > element[j + 1])
+            {
+                int temp = element[j];
+                element[j] = element[j + 1];
+                element[j + 1] = temp;
+            }
         }
-    }
-    cout << endl;
+        pass++;
+    } while (pass <= nPanjang - 1);
 }
+
+
 void binarySearch()
 {
     char ulang;
